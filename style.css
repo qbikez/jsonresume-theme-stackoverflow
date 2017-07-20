@@ -60,7 +60,7 @@ body, html {
     letter-spacing: 0;
     line-height: 1.46153846;
     text-align: left;
-    webkit-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
 }
 
 p {
@@ -86,6 +86,10 @@ li {
     list-style-type: square;
     list-style-position: outside;
     margin-left: 1.3em;
+}
+
+.highlights > li > p {
+  margin-bottom: 0.5em;
 }
 
 h1 {
@@ -252,7 +256,7 @@ h2.section-title {
 .studyType,
 .title,
 .awarder {
-    display: inline-block;
+    display: inline;
 }
 
 .position,
@@ -268,7 +272,7 @@ h2.section-title {
 .institution::before,
 .organization::before,
 .awarder::before {
-    content: "at"
+    content: "at "
 }
 
 .company,
@@ -281,7 +285,7 @@ h2.section-title {
 
 .section header .date {
     font-size: 1rem;
-    display: block;
+    display: inline-table;
     padding: .1em 0;
     font-weight: 600;
 }
@@ -516,13 +520,13 @@ ul.courses li:hover {
     .institution::before,
     .organization::before,
     .awarder::before {
-        content: "|";
+        content: "| ";
     }
 
     .header-left {
         float: left;
         width: 70%;
-        word-break: break-all;
+        word-break: normal;
     }
 
     .section header .date {
@@ -563,7 +567,7 @@ ul.courses li:hover {
     .institution::before,
     .organization::before,
     .awarder::before {
-        content: "at";
+        content: "at ";
     }
 
     .main-summary {

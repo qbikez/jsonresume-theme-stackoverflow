@@ -11,5 +11,10 @@
   "dependencies": {
     "handlebars": "latest",
     "moment": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "^8.0.14",
+    "ts-node": "^3.2.0",
+    "typescript": "^2.4.2"
   }
 }

@@ -302,7 +302,7 @@ ul.courses li {
     padding: 4px 5px 5px;
     font-size: .9rem;
     line-height: 1;
-    text-transform: lowercase;
+    /*text-transform: lowercase;*/
     color: #3e6d8e;
     background-color: #dfeaf1;
     border: 0 solid #dfeaf1;

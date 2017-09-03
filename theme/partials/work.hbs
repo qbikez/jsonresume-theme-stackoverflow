@@ -1,7 +1,7 @@
 {{#if resume.work.length}}
 <section class="section">
   <header>
-    <h2 class='section-title'>Work Experience <span class="item-count">({{resume.work.length}})</span></h2>
+    <h2 class='section-title'>Work Experience</h2>
   </header>
 
   <section id="work">
@@ -26,10 +26,10 @@
 					<div class="date">
 						{{#if startDate}}
 						<span class="startDate">
-						{{MY startDate}}
+						{{Y startDate}}
 						</span> {{/if}} {{#if endDate}}
 						<span class="endDate">
-						- {{MY endDate}}
+						- {{Y endDate}}
 						</span> {{else}}
 						<span class="endDate">
 						- Current
@@ -73,7 +73,8 @@
       </div>
       {{/if}} 
 			{{#if highlights.length}}
-      <ul class="highlights">
+			<p>Key contributions:</p>
+      <ul class=" ">
         {{#each highlights}}
         	<li>{{paragraphSplit .}}</li>
         {{/each}}

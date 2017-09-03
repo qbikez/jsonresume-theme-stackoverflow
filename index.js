@@ -1,39 +1,35 @@
-const fs = require('fs');
-const path = require('path');
-const requireDir = require('require-dir');
-const Handlebars = require('handlebars');
-
-const HBS_HELPERS = './theme/hbs-helpers';
-
+"use strict";
+var fs = require('fs');
+var path = require('path');
+var requireDir = require('require-dir');
+var Handlebars = require('handlebars');
+var HBS_HELPERS = './theme/hbs-helpers';
 function render(resume) {
-  const css = fs.readFileSync(`${__dirname}/style.css`, 'utf-8');
-  const tpl = fs.readFileSync(`${__dirname}/resume.hbs`, 'utf-8');
-  const partialsDir = path.join(__dirname, 'theme/partials');
-  const filenames = fs.readdirSync(partialsDir);
-
-  filenames.forEach((filename) => {
-    const matches = /^([^.]+).hbs$/.exec(filename);
-    if (!matches) return;
-    const name = matches[1];
-    const filepath = path.join(partialsDir, filename);
-    const template = fs.readFileSync(filepath, 'utf8');
-
-    Handlebars.registerPartial(name, template);
-  });
-
-  return Handlebars.compile(tpl)({
-    css,
-    resume,
-    ext: {
-        skills: {
-            expert: resume.skills.filter(function (v) { return v.level && expertLevel.indexOf(v.level.toLowerCase()) >= 0; }),
-            other: resume.skills.filter(function (v) { return !v.level || expertLevel.indexOf(v.level.toLowerCase()) < 0; }),
+    var css = fs.readFileSync(__dirname + "/style.css", 'utf-8');
+    var tpl = fs.readFileSync(__dirname + "/resume.hbs", 'utf-8');
+    var partialsDir = path.join(__dirname, 'theme/partials');
+    var filenames = fs.readdirSync(partialsDir);
+    filenames.forEach(function (filename) {
+        var matches = /^([^.]+).hbs$/.exec(filename);
+        if (!matches)
+            return;
+        var name = matches[1];
+        var filepath = path.join(partialsDir, filename);
+        var template = fs.readFileSync(filepath, 'utf8');
+        Handlebars.registerPartial(name, template);
+    });
+    var expertLevel = ["expert", "master"];
+    return Handlebars.compile(tpl)({
+        css: css,
+        resume: resume,
+        ext: {
+            skills: {
+                expert: resume.skills.filter(function (v) { return v.level && expertLevel.indexOf(v.level.toLowerCase()) >= 0; }),
+                other: resume.skills.filter(function (v) { return !v.level || expertLevel.indexOf(v.level.toLowerCase()) < 0; }),
+            }
         }
-    }
-  });
+    });
 }
-
 /* HANDLEBARS HELPERS */
 requireDir(HBS_HELPERS, { recurse: true });
-
-module.exports = { render };
+module.exports = { render: render };

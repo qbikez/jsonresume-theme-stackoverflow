@@ -1,7 +1,7 @@
 {{#if resume.projects.length}}
 <section class="section">
   <header>
-    <h2 class='section-title'>Projects</h2>
+    <h2 class='section-title'>Open Source Projects</h2>
   </header>
   <section id="projects">
     {{#each resume.projects}}
@@ -27,6 +27,16 @@
         {{/if}}
       </div>
       {{/if}}
+       {{#if url}}
+      <span class="website">
+        {{#contains url "github.com" }}
+        <span class="fa fa-github github social"></span>
+        {{/contains}}{{#contains url "bitbucket.org" }}
+        <span class="fa fa-bitbucket bitbucket social"></span>
+        {{/contains}}
+        <a target="_blank" href="{{url}}">{{url}}</a>
+      </span>
+      {{/if}}
     </header>
     {{/if}}
     {{#location}}
@@ -44,12 +54,7 @@
     </span>
     {{/if}}
     </span>
-    {{/location}}
-    {{#if url}}
-    <span class="website">
-      <a target="_blank" href="{{url}}">{{url}}</a>
-    </span>
-    {{/if}}
+    {{/location}}   
     {{#if keywords.length}}
     <ul class="keywords">
       {{#each keywords}}

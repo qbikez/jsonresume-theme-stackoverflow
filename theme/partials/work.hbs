@@ -29,7 +29,7 @@
 						{{Y startDate}}
 						</span> {{/if}} {{#if endDate}}
 						<span class="endDate">
-						- {{Y endDate}}
+						- {{ Y endDate}}
 						</span> {{else}}
 						<span class="endDate">
 						- Current
@@ -73,8 +73,7 @@
       </div>
       {{/if}} 
 			{{#if highlights.length}}
-			<p>Key contributions:</p>
-      <ul class=" ">
+      <ul class="highlights">
         {{#each highlights}}
         	<li>{{paragraphSplit .}}</li>
         {{/each}}

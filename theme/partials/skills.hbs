@@ -21,12 +21,13 @@
 		{{/each}}
 	</section>
 </section>
-{{/if}} {{#if ext.skills.other.length}}
+{{/if}} 
+{{#if ext.skills.other.length}}
 <section class="section margin1">
 	<header>
 		<h2 class='section-title'>Other skills</h2>
 	</header>
-	<section id="skills-other" class="skills skills-other">
+	<section id="skills-other" class="skills skills-other {{#ifCond ext.skills.other.0.name "===" ""}}skills-other-singlerow{{/ifCond}}">
 		{{#each ext.skills.other }}
 		<div class="item">
 			{{#if name}}

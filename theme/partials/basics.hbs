@@ -35,14 +35,8 @@
 		
 		{{#birthDate birth}}
 		{{/birthDate}}
-
-		<div id="contact">
-			{{#if website}}
-			<div class="website">
-				<span class="fa fa-external-link"></span>
-				<a target="_blank" target="_blank" href="{{website}}">{{website}}</a>
-			</div>
-			{{/if}} 
+{{!-- 
+		<div id="contact">			
 			{{#if email}}
 			<div class="email">
 				<span class="fa fa-envelope-o"></span>
@@ -54,9 +48,15 @@
 				<span class="fa fa-mobile"></span> {{phone}}
 			</div>
 			{{/if}}
-		</div>
+			{{#if website}}
+			<div class="website">
+				<span class="fa fa-external-link"></span>
+				<a target="_blank" target="_blank" href="{{website}}">{{website}}</a>
+			</div>
+			{{/if}} 
+		</div> --}}
 
-		{{#if profiles.length}}
+		{{!-- {{#if profiles.length}}
 		<div id="profiles">
 			{{#each profiles}}
 			<div class="item">
@@ -84,7 +84,7 @@
 			</div>
 			{{/each}}
 		</div>
-		{{/if}}
+		{{/if}} --}}
 	</header>
 
 	{{#if summary}}

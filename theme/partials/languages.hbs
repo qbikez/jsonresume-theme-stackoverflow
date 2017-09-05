@@ -8,15 +8,16 @@
     <div class="display">
       {{#if language}}
       <h3 class="language">
-        {{language}}
+        {{language}} 
+          <em>({{fluency}})</em>
       </h3>
       {{/if}}
       <div class="item">
-        {{#if fluency}}
+        {{!-- {{#if fluency}}
         <div class="level fluency {{toLowerCase fluency}}">
           <em>{{fluency}}</em>
         </div>
-        {{/if}}
+        {{/if}} --}}
       </div>
     </div>
     {{/each}}

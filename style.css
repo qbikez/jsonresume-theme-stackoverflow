@@ -27,6 +27,13 @@ footer, header, hgroup, menu, nav, section {
     display: block;
 }
 
+header .website {
+    font-size: 1rem;
+} 
+header .website::before {
+    content: "| ";
+}
+
 body {
     line-height: 1;
 }
@@ -89,7 +96,7 @@ li {
 }
 
 .highlights > li > p {
-  margin-bottom: 0.5em;
+  margin-bottom: 0.1rem;
 }
 
 h1 {
@@ -101,7 +108,7 @@ h2 {
 }
 
 h3 {
-    font-size: 1.27rem;
+    font-size: 1.20rem;
 }
 
 em {
@@ -193,6 +200,13 @@ section .location {
     margin: .15em 0 0;
 }
 
+.summary p {
+    margin-bottom: 0;
+}
+
+
+
+
 h2.section-title {
     display: inline-block;
     background: #fff;
@@ -232,6 +246,11 @@ h2.section-title {
     font-size: 1.38rem;
     position: relative;
     margin-top: .7em;
+}
+
+
+#projects > header {
+    margin-top: .0em;
 }
 
 .section > section > header:first-of-type {
@@ -308,6 +327,8 @@ ul.courses li {
     border: 0 solid #dfeaf1;
     white-space: nowrap;
 }
+
+
 
 ul.keywords li:hover,
 ul.courses li:hover {
@@ -406,11 +427,21 @@ ul.courses li:hover {
 }
 
 .skills .item {
-    width: 16em;
+    /*width: 16em;*/
+    width: 14.1rem;
 }
 
 .skills .item .keywords {
-    width: 15em;
+    /*width: 15em;*/
+}
+
+
+.skills-other-singlerow .item {
+    width: auto;
+}
+
+.skills-other-singlerow .item .keywords {
+    width: auto;
 }
 
 /* Skill chart */
@@ -572,15 +603,27 @@ ul.courses li:hover {
 
     .main-summary {
         padding: 2rem 0;
+        background: none;
     }
-
+    
     .section {
         margin: .8rem 0;
         padding: 0;
     }
 
+    .header-left {
+        float: left;
+        width: 70%;
+        word-break: normal;
+    }
+
     .section header {
         padding-bottom: .15rem;
+    }
+
+    .section header .date {
+        float: right;
+        padding: .2em;
     }
 
     .section .location {
@@ -607,7 +650,8 @@ ul.courses li:hover {
         margin: 0;
         padding: 0;
         font-size: .8rem;
-        text-transform: lowercase;
+        background-color: white;
+        /*text-transform: lowercase;*/
     }
 
     ul.keywords li::after,
@@ -623,11 +667,11 @@ ul.courses li:hover {
     }
 
     ul.keywords::before {
-        content: "Skills acquired: ";
+        /*content: "Skills acquired: ";*/
     }
 
     .skills .keywords::before {
-        content: '';
+        /*content: '';*/
     }
 
     .section p {
@@ -636,7 +680,7 @@ ul.courses li:hover {
     }
 
     ul.courses::before {
-        content: "Major courses: ";
+        /*content: "Major courses: ";*/
     }
 
     ul.keywords li:last-of-type::after,

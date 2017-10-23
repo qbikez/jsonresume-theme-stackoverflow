@@ -194,6 +194,8 @@ section .location {
     background: #f1f8ff;
     padding: 1.2em 1em;
     margin-top: 1rem;
+    /* if summary is inside header: */
+    margin-right: 12rem;
 }
 
 .main-summary p {
@@ -428,7 +430,9 @@ ul.courses li:hover {
 
 .skills .item {
     /*width: 16em;*/
-    width: 14.1rem;
+    /* width: 14.1rem; */
+    width: 19rem; 
+
 }
 
 .skills .item .keywords {

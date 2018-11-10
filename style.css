@@ -119,7 +119,7 @@ blockquote {
     margin-bottom: 1em;
 }
 
-strong {
+strong, .strong {
     font-weight: 700;
 }
 
@@ -323,6 +323,7 @@ ul.courses li {
     padding: 4px 5px 5px;
     font-size: .9rem;
     line-height: 1;
+    border-radius: 3px;
     /*text-transform: lowercase;*/
     color: #3e6d8e;
     background-color: #dfeaf1;
@@ -330,7 +331,18 @@ ul.courses li {
     white-space: nowrap;
 }
 
-
+ul.keywords li.secondary
+{
+    display: inline-block;
+    margin: 2px 2px 2px 0;
+    padding: 4px 5px 5px;
+    font-size: .9rem;
+    line-height: 1;
+    /*text-transform: lowercase;*/
+    background-color: white !important;
+    border: 0 solid #dfeaf1;
+    white-space: nowrap;
+}
 
 ul.keywords li:hover,
 ul.courses li:hover {

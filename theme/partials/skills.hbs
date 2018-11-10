@@ -13,7 +13,7 @@
 			{{/if}} {{#if keywords.length}}
 			<ul class="keywords">
 				{{#each keywords}}
-				<li>{{.}}</li>
+				<li class='{{keywordClass .}}'>{{keywordMarkup .}}</li>
 				{{/each}}
 			</ul>
 			{{/if}}
@@ -37,7 +37,7 @@
 			{{/if}} {{#if keywords.length}}
 			<ul class="keywords">
 				{{#each keywords}}
-				<li>{{.}}</li>
+				<li class='{{keywordClass .}}'>{{keywordMarkup .}}</li>
 				{{/each}}
 			</ul>
 			{{/if}}

@@ -1,7 +1,8 @@
+import * as Handlebars from "handlebars";
+
 const fs = require('fs');
 const path = require('path');
 const requireDir = require('require-dir');
-const Handlebars = require('handlebars');
 
 const HBS_HELPERS = './theme/hbs-helpers';
 

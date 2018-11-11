@@ -1,27 +1,28 @@
 "use strict";
-var fs = require('fs');
-var path = require('path');
-var requireDir = require('require-dir');
-var Handlebars = require('handlebars');
-var HBS_HELPERS = './theme/hbs-helpers';
+Object.defineProperty(exports, "__esModule", { value: true });
+const Handlebars = require("handlebars");
+const fs = require('fs');
+const path = require('path');
+const requireDir = require('require-dir');
+const HBS_HELPERS = './theme/hbs-helpers';
 function render(resume) {
-    var css = fs.readFileSync(__dirname + "/style.css", 'utf-8');
-    var tpl = fs.readFileSync(__dirname + "/resume.hbs", 'utf-8');
-    var partialsDir = path.join(__dirname, 'theme/partials');
-    var filenames = fs.readdirSync(partialsDir);
-    filenames.forEach(function (filename) {
-        var matches = /^([^.]+).hbs$/.exec(filename);
+    const css = fs.readFileSync(`${__dirname}/style.css`, 'utf-8');
+    const tpl = fs.readFileSync(`${__dirname}/resume.hbs`, 'utf-8');
+    const partialsDir = path.join(__dirname, 'theme/partials');
+    const filenames = fs.readdirSync(partialsDir);
+    filenames.forEach((filename) => {
+        const matches = /^([^.]+).hbs$/.exec(filename);
         if (!matches)
             return;
-        var name = matches[1];
-        var filepath = path.join(partialsDir, filename);
-        var template = fs.readFileSync(filepath, 'utf8');
+        const name = matches[1];
+        const filepath = path.join(partialsDir, filename);
+        const template = fs.readFileSync(filepath, 'utf8');
         Handlebars.registerPartial(name, template);
     });
     var expertLevel = ["expert", "master"];
     return Handlebars.compile(tpl)({
-        css: css,
-        resume: resume,
+        css,
+        resume,
         ext: {
             skills: {
                 expert: resume.skills.filter(function (v) { return v.level && expertLevel.indexOf(v.level.toLowerCase()) >= 0; }),
@@ -32,4 +33,4 @@ function render(resume) {
 }
 /* HANDLEBARS HELPERS */
 requireDir(HBS_HELPERS, { recurse: true });
-module.exports = { render: render };
+module.exports = { render };

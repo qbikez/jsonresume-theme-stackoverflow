@@ -9,6 +9,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@types/handlebars": "^4.0.39",
     "handlebars": "latest",
     "moment": "latest"
   },

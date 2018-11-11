@@ -56,35 +56,7 @@
 			{{/if}} 
 		</div> --}}
 
-		 {{#if profiles.length}}
-		<div id="profiles">
-			{{#each profiles}}
-			<div class="item">
-				{{#if network}}
-				<div class="username">
-					{{#if flair_html}}
-					{{else}}
-					<span class="fa fa-{{spaceToDash network}} {{spaceToDash network}} social"></span>
-					{{/if}}
-					{{#if url}}
-					<span class="url">
-						<a target="_blank" href="{{url}}">
-						{{#if flair_html}}
-						{{{flair_html}}}
-						{{else}}
-						{{username}}
-						{{/if}}	
-						</a>
-					</span> 
-					{{else}}
-					<span>{{username}}</span>
-					{{/if}}
-				</div>
-				{{/if}}
-			</div>
-			{{/each}}
-		</div>
-		{{/if}} 
+		{{> profiles }}
 
     	{{#if summary}}
 	<section class="section main-summary">

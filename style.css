@@ -251,9 +251,9 @@ h2.section-title {
 }
 
 
-#projects > header {
+/* #projects > header {
     margin-top: .0em;
-}
+} */
 
 .section > section > header:first-of-type {
     margin: 0;
@@ -291,9 +291,13 @@ h2.section-title {
 
 .company::before,
 .institution::before,
-.organization::before,
+.organization::before
+/* .awarder::before  */
+{
+    content: "at\00a0"
+}
 .awarder::before {
-    content: "at "
+    content: "|";
 }
 
 .company,
@@ -333,14 +337,8 @@ ul.courses li {
 
 ul.keywords li.secondary
 {
-    display: inline-block;
-    margin: 2px 2px 2px 0;
-    padding: 4px 5px 5px;
-    font-size: .9rem;
-    line-height: 1;
     /*text-transform: lowercase;*/
     background-color: white !important;
-    border: 0 solid #dfeaf1;
     white-space: nowrap;
 }
 
@@ -515,10 +513,15 @@ ul.courses li:hover {
 }
 
 .disclaimer {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     font-style: italic;
-    margin-left: 15rem;
+    margin-left: 17rem;
     padding-top: 2rem;
+    text-align: justify;
+}
+
+.footer-small {
+    text-align: right; font-size: 0.7rem;
 }
 
 /******************
@@ -624,26 +627,29 @@ ul.courses li:hover {
 
     
     .skills .item {
-        width: 17rem;
+        /* width: 17rem; */
     }
 
     .company::before,
     .institution::before,
-    .organization::before,
+    .organization::before
+    {
+        content: "at\00a0";
+    }
     .awarder::before {
-        content: "at ";
-    }
+        content: "|";
+    } 
 
-    .main-summary {
-        padding: 2rem 0;
-        background: none;
-    }
-    
     .section {
         margin: .8rem 0;
         padding: 0;
     }
 
+    .main-summary {
+        padding-top: 0.8rem;
+        background: none;
+    }
+    
     .header-left {
         float: left;
         width: 70%;
@@ -658,8 +664,7 @@ ul.courses li:hover {
         float: right;
         padding: .2em;
     }
-
-    .section .location {
+    section .location {
         padding-bottom: .15rem;
     }
     /* .stack-overflow::after {
@@ -682,7 +687,7 @@ ul.courses li:hover {
     ul.courses li {
         margin: 0;
         padding: 0;
-        font-size: .8rem;
+        font-size: .9rem;
         background-color: white;
         /*text-transform: lowercase;*/
     }
@@ -708,7 +713,7 @@ ul.courses li:hover {
     }
 
     .section p {
-        margin: 0;
+        /* margin: 0; */
         padding: 0;
     }
 
@@ -737,5 +742,18 @@ ul.courses li:hover {
     .item.display {
         display: block;
         opacity: 1 !important;
+    }
+    .education {
+        page-break-before: always;
+    }
+    .projects {
+        page-break-before: auto;
+    }
+
+    .footer-small {
+        text-align: right; font-size: 0.5rem;
+        position: fixed;
+        bottom: 0px;
+        right: 0px;
     }
 }

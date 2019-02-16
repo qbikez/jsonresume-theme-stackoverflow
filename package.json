@@ -9,10 +9,10 @@
   },
   "license": "MIT",
   "dependencies": {
-    "moment": "latest"
+    "moment": "latest",
+    "handlebars": "^4.1.0"
   },
   "devDependencies": {
-    "handlebars": "^4.1.0",
     "@types/node": "^8.0.14",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^15.0.1",
